@@ -10,13 +10,13 @@ public class UserController : ControllerBase
     [HttpGet]
     [Route("{id}")]
     [ProducesResponseType(typeof(User), StatusCodes.Status200OK)]
-    public IActionResult Get(int id)
+    public IActionResult Get(int id, [FromHeader] string name)
     {
         var user = new User
         {
             Id = id,
             Age = 25,
-            Name = "João"
+            Name = name
         };
         return Ok(user);
     }
