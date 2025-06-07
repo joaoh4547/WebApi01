@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using WebApi01.Communication.Requests;
+using WebApi01.Communication.Responses;
 
 namespace WebApi01.Controllers;
 
@@ -19,5 +21,17 @@ public class UserController : ControllerBase
             Name = name
         };
         return Ok(user);
+    }
+
+    [HttpPost]
+    [ProducesResponseType(typeof(ResponseRegisterUser), StatusCodes.Status201Created)]
+    public IActionResult Create(RequestRegisterUser request)
+    {
+        ResponseRegisterUser response = new ResponseRegisterUser
+        {
+            Id = 1,
+            Name = request.Name,
+        };
+        return Created(string.Empty, response);
     }
 }
