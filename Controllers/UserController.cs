@@ -8,13 +8,16 @@ public class UserController : ControllerBase
 {
 
     [HttpGet]
-    public IActionResult Get()
+    [Route("{id}")]
+    [ProducesResponseType(typeof(User), StatusCodes.Status200OK)]
+    public IActionResult Get(int id)
     {
-        var response = new Response
+        var user = new User
         {
+            Id = id,
             Age = 25,
             Name = "João"
         };
-        return Ok(response);
+        return Ok(user);
     }
 }
