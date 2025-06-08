@@ -4,9 +4,7 @@ using WebApi01.Communication.Responses;
 
 namespace WebApi01.Controllers;
 
-[Route("api/[controller]")]
-[ApiController]
-public class UserController : ControllerBase
+public class UserController : AppBaseController
 {
 
     [HttpGet]
