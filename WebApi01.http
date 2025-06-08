@@ -1,6 +1,7 @@
-@WebApi01_HostAddress = http://localhost:5094
+@WebApi01_HostAddress = https://localhost:7217
 
-GET {{WebApi01_HostAddress}}/weatherforecast/
+GET {{WebApi01_HostAddress}}/api/test
 Accept: application/json
+X-ACCESS-KEY: 4556ewe.6552023
 
 ###
